@@ -1,0 +1,20 @@
+-Se asumió que para una consultada dada: 
+
+un hecho está bien formulado si tiene el siguiente formato:
+nombreHecho(argumentos).
+(Véase que es obligatorio incluir el punto, de lo contrario no será validada).
+
+una regla está bien formulada si tiene el siguiente formado:
+nombreRegla(argumento1,argumento2,argumento3,...,argumentoN).
+(Véase que es obligatorio incluir el punto, de lo contrario no será validada).
+
+-Dado que no estaba especificado en ningún lugar, se asumió que una base de datos NO está bien parseada si:
+
+A) Cuenta con un solo hecho o con una sola regla.
+
+B) Los hechos que conforman una regla no todos se encuentran definidos en la base.
+
+En otro caso se asume que está bien parseada.
+
+Por una cuestión técnica de desarrollo de la implementación se eliminó los espacios entre las comas que separan a los argumentos. 
+Todos los tests han sido modificados con los criterios mencionados.

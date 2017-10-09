@@ -1,6 +1,4 @@
-var Interpreter = function () {
-
-//Se asume que la bd se pasa por parametro
+ //Se asume que la bd se pasa por parametro
  //Se invoca luego de haber comprobado que la bd esta bien parseada
  this.checkQuery = function(entrada,bd)
  {
@@ -114,6 +112,8 @@ var Interpreter = function () {
  
  this.parseDB = function (bd, paramss, paramsss) 
   {
+	var cantHechos = 0;
+	var cantReglas = 0;
 	//al tener una sola linea la bd esta mal creada. Ya que tiene un solo hecho o una sola regla
 	if (db.length == 1)
 	{
@@ -139,8 +139,18 @@ var Interpreter = function () {
 				alert("Ha habido un error: todos los hechos que conforman una regla no se encuentran definidos en la base.");
 				return false;
 			}
+			cantReglas++;
+		}
+		else
+		{
+			cantHechos++;
 		}
 	}
+	if (cantHechos == 0 || cantReglas == 0)
+	{
+		alert('Ha habido un error: a la base le falta por lo menos un hecho o una regla');
+		return false;
+	}	
 	return true;
   }	
   
@@ -176,7 +186,17 @@ var Interpreter = function () {
 		var reglaValida = expresionRegla.test(regla);
 		return reglaValida;
   }
-
-}
-
-module.exports = Interpreter;
+       var db = [
+        "varon(juan).",
+        "varon(pepe).",
+        "varon(hector).",
+        "varon(roberto).",
+        "varon(alejandro).",
+        "mujer(maria).",
+        "mujer(cecilia).",
+        "padre(juan,pepe).",
+        "padre(juan,pepa).",
+        "padre(hector,maria).",
+        "padre(roberto,alejandro).",
+        "padre(roberto,cecilia).",
+];

@@ -4,7 +4,6 @@ var assert = require('assert');
 
 var Interpreter = require('../src/interpreter');
 
-
 describe("Interpreter", function () {
 
       var db = [
@@ -35,10 +34,10 @@ describe("Interpreter", function () {
     describe('Hechos del intérprete', function () {
 
         it('la base esta mal formulada. La consulta deberia devolver undefined', function () {
-            assert(intepreter.checkQuery('varon(juan).',db) === undefined);
+            assert(interpreter.checkQuery('varon(juan).',db) === undefined);
         });
 		it('la base esta mal formulada. La consulta deberia devolver undefined', function () {
-            assert(intepreter.checkQuery('mujer(maria).',db) === undefined);
+            assert(interpreter.checkQuery('mujer(maria).',db) === undefined);
         });
        
 

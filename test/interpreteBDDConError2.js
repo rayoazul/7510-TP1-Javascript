@@ -2,6 +2,7 @@ var expect = require("chai").expect;
 var should = require('should');
 var assert = require('assert');
 
+//var Interpreter = require('C:/Users/xon1/Desktop/7510-TP1-Javascript-master/src/interpreter');
 var Interpreter = require('../src/interpreter');
 
 
@@ -40,10 +41,10 @@ describe("Interpreter", function () {
     describe('Hechos del intérprete', function () {
 
         it('la base esta mal formulada. La consulta deberia devolver undefined', function () {
-            assert(intepreter.checkQuery('varon(juan).',db) === undefined);
+            assert(interpreter.checkQuery('varon(juan).',db) === undefined);
         });
 		it('la base esta mal formulada. La consulta deberia devolver undefined', function () {
-            assert(intepreter.checkQuery('mujer(maria).',db) === undefined);
+            assert(interpreter.checkQuery('mujer(maria).',db) === undefined);
         });
        
 

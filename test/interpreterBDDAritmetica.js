@@ -41,7 +41,7 @@ describe("Interpreter", function () {
     describe('Hechos del intérprete', function () {
 
         it('dividir(100,20,5) should be true', function () {
-            assert(interpreter.checkQuery('dividir(100,20,5).',db));
+            assert(interpreter.checkQuery('dividir(100,5,20).',db));
         });
 		
 		it('dividir(144,12,12) should be true', function () {

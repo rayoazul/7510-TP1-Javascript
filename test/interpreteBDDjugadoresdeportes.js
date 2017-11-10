@@ -37,7 +37,7 @@ describe("Interpreter", function () {
         // runs after all tests in this block
     });
 
-    beforeEach(function () {
+	beforeEach(function () {
         // runs before each test in this block
         interpreter = new Interpreter();
         interpreter.parseDB(db);
@@ -51,36 +51,36 @@ describe("Interpreter", function () {
     describe('Hechos del intérprete', function () {
 
 		it('nombre(ginobili) deberia ser true', function () {
-            assert(intepreter.checkQuery('nombre(ginobili).',db) === true);
+            assert(interpreter.checkQuery('nombre(ginobili).',db) === true);
         });
 		it('nombre(maradona) deberia ser true', function () {
-            assert(intepreter.checkQuery('nombre(maradona).',db) === true);
+            assert(interpreter.checkQuery('nombre(maradona).',db) === true);
         });
 		it('nombre(perez) deberia ser false', function () {
-            assert(intepreter.checkQuery('nombre(perez).',db) === false);
+            assert(interpreter.checkQuery('nombre(perez).',db) === false);
         });
 		it('nacimiento(maradona,1960) deberia ser true', function () {
-            assert(intepreter.checkQuery('nacimiento(maradona,1960).',db) === true);
+            assert(interpreter.checkQuery('nacimiento(maradona,1960).',db) === true);
         });
 		
 		it('nacimiento(monzon,1944) deberia ser false', function () {
-            assert(intepreter.checkQuery('nacimiento(monzon,1944).',db) === false);
+            assert(interpreter.checkQuery('nacimiento(monzon,1944).',db) === false);
         });
 		
 		it('nacimiento(vilas,1942) deberia ser true', function () {
-            assert(intepreter.checkQuery('nacimiento(vilas,1942).',db) === true);
+            assert(interpreter.checkQuery('nacimiento(vilas,1942).',db) === true);
         });
 		
 		it('jugador(vilas,tenis) deberia ser true', function () {
-            assert(intepreter.checkQuery('jugador(vilas,tenis).',db) === true);
+            assert(interpreter.checkQuery('jugador(vilas,tenis).',db) === true);
         });
 		
 		it('jugador(aymar,basquet) deberia ser false', function () {
-            assert(intepreter.checkQuery('jugador(aymar,basquet).',db) === false);
+            assert(interpreter.checkQuery('jugador(aymar,basquet).',db) === false);
         });
 		
 		it('jugador(monzon,boxeo) deberia ser true', function () {
-            assert(intepreter.checkQuery('jugador(monzon,boxeo).',db) === true);
+            assert(interpreter.checkQuery('jugador(monzon,boxeo).',db) === true);
         });
 		
     });
@@ -88,28 +88,28 @@ describe("Interpreter", function () {
     describe('Reglas del intérprete', function () {
 
         it('jugadorNacimiento(maradona,1960) deberia ser true', function () {
-            assert(intepreter.checkQuery('jugadorNacimiento(maradona,1960).',db) === true);
+            assert(interpreter.checkQuery('jugadorNacimiento(maradona,1960).',db) === true);
         });
 		it('jugadorNacimiento(ginobili,1977) deberia ser true', function () {
-            assert(intepreter.checkQuery('jugadorNacimiento(ginobili,1977).',db) === true);
+            assert(interpreter.checkQuery('jugadorNacimiento(ginobili,1977).',db) === true);
         });
 		it('jugadorNacimiento(ginobili,1970) deberia ser false', function () {
-            assert(intepreter.checkQuery('jugadorNacimiento(ginobili,1970).',db) === false);
+            assert(interpreter.checkQuery('jugadorNacimiento(ginobili,1970).',db) === false);
         });
 		it('jugadorNacimiento(monzon,1977) deberia ser false', function () {
-            assert(intepreter.checkQuery('jugadorNacimiento(monzon,1977).',db) === false);
+            assert(interpreter.checkQuery('jugadorNacimiento(monzon,1977).',db) === false);
         });
 		it('juegaAl(maradona,1960,futbol) deberia ser true', function () {
-            assert(intepreter.checkQuery('juegaAl(maradona,1960,futbol).',db) === true);
+            assert(interpreter.checkQuery('juegaAl(maradona,1960,futbol).',db) === true);
         });
 		it('juegaAl(ginobili,1960,futbol) deberia ser false', function () {
-            assert(intepreter.checkQuery('juegaAl(ginobili,1960,futbol).',db) === false);
+            assert(interpreter.checkQuery('juegaAl(ginobili,1960,futbol).',db) === false);
         });
 		it('juegaAl(vilas,1924,tenis) deberia ser false', function () {
-            assert(intepreter.checkQuery('juegaAl(vilas,1924,tenis).',db) === false);
+            assert(interpreter.checkQuery('juegaAl(vilas,1924,tenis).',db) === false);
         });
 		it('juegaAl(aymar,1977,hockey) deberia ser true', function () {
-            assert(intepreter.checkQuery('juegaAl(aymar,1977,hockey).',db) === true);
+            assert(interpreter.checkQuery('juegaAl(aymar,1977,hockey).',db) === true);
         });
         
 
